@@ -1,0 +1,26 @@
+name: Publish flake
+
+on:
+  push:
+    tags:
+      - v?[0-9]+.[0-9]+.[0-9]+
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "The existing tag to publish"
+        type: "string"
+        required: true
+
+jobs:
+  flakestry:
+    name: Publish to flakestry.dev
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: flakestry/flakestry-publish@main
+        with:
+          version: "${{ inputs.tag || github.ref_name }}"
