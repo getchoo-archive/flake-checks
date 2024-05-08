@@ -3,13 +3,13 @@ name: CI
 on:
   push:
     paths:
-      - '.github/workflows/**'
-      - '**.nix'
+      - ".github/workflows/**"
+      - "**.nix"
     branches: [main]
   pull_request:
     paths:
-      - '.github/workflows/**'
-      - '**.nix'
+      - ".github/workflows/**"
+      - "**.nix"
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v26
 
-      - name: Build release.nix 
+      - name: Build release.nix
         run: |
           nix flake check ./test \
             --print-build-logs \
