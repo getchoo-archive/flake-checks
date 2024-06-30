@@ -16,6 +16,7 @@
         root = ../.;
       };
     in {
-      checks = flake-checks';
+      # we use alejandra, so nixfmt will always fail
+      checks = builtins.removeAttrs flake-checks' ["nixfmt"];
     });
 }
