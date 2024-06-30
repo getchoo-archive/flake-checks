@@ -4,7 +4,7 @@
   root,
   biome,
 }:
-runCommand "check-biome-fmt" {} ''
+runCommand "check-biome-fmt" { } ''
   ${lib.getExe biome} format ${root}/**/*
   touch $out
 ''

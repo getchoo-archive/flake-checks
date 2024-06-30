@@ -4,7 +4,7 @@
   root,
   statix,
 }:
-runCommand "check-statix" {} ''
+runCommand "check-statix" { } ''
   ${lib.getExe statix} check ${root}
   touch $out
 ''
