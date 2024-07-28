@@ -16,8 +16,12 @@
         };
       in
       {
-        # we use nixfmt, so alejandra will always fail
-        checks = builtins.removeAttrs flake-checks' [ "alejandra" ];
+        checks = builtins.removeAttrs flake-checks' [
+          # we use nixfmt, so alejandra will always fail
+          "alejandra"
+          # this flake is not REUSE-compilant
+          "reuse"
+        ];
       }
     );
 }
