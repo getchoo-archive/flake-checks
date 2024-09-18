@@ -1,3 +1,8 @@
+> [!WARNING]
+> This project has been archived! [treefmt-nix](https://github.com/numtide/treefmt-nix ) is the recommended alternative
+>
+> Thanks to all those who helped :)
+
 # flake-checks
 
 Simple, lightweight, and reusable Nix `flake check`s
